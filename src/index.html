@@ -4,50 +4,69 @@
 -->
 
 <main class="home">
-  <h1 class="home__title">The Fastest Eleventy Starter&nbsp;Project</h1>
-  <article class="home__content">
-    <!--
-      Include Markdown using the 'markdown' paired shortcode. Make sure that you strip whitespace
-      (notice the hyphens in the opening and closing tag).
-    -->
-    {% markdown -%}
-      {% include 'content.md' %}
-    {%- endmarkdown %}
-    <!--
-      Here's an example of the picture shortcode which outputs a responsive picture with WebP support;
-      Parameters are src, alt, sizes and loading (lazy or eager). Sizes and loading are optional.
-    -->
-    {% picture 'car.jpg', 'Panning photo of grey coupe on road', '90vw', 'lazy' %}
-  </article>
+  <div class="hero">
+    <div class="hero__content">
+      <div class="hero__logo"></div>
+      <h1 class="hero__title">Product designer and writer.
+        Eccentric architecture enthusiast.
+        Always a work in progress.</h1>
+    </div>
+    <div class="hero__image">
+      {% picture 'profile-index.jpg', 'Self portrait with my dog Leni', '90vw', 'lazy' %}
+    </div>
+  </div>
+  <div class="work">
+    <h2 class="work__title">Recent work</h2>
+    {% include 'projects.html' %}
+  </div>
 </main>
 
 {% stylesheet 'scss' %}
   // Import sass from your styles directory
+  @import 'variables';
   @import 'mixins';
+  @import 'functions';
 
   .home {
     @include container;
+  }
 
-    margin-bottom: 4rem;
+  .hero {
+
+    margin-bottom: rem(128px);
+    display: flex;
+    flex-flow: row wrap;
+
+    &__content {
+      flex: 5;
+      margin-right: rem(60px);
+      display: flex;
+    }
+
+    &__image {
+      flex: 3;
+
+      picture {
+        height: auto;
+      }
+    }
 
     &__title {
+      font-size: 2.441em;
+      font-weight: 400;
       margin-bottom: 2rem;
       margin-top: 2rem;
+      align-self: flex-end;
     }
 
-    &__content > * + {
-      * {
-        margin-top: 1rem;
-      }
-
-      picture,
-      p > picture:only-child {
-        margin-top: 2rem;
-      }
-    }
   }
-{% endstylesheet %}
 
-{% javascript %}
-  console.log('Super fast 💨')
-{% endjavascript %}
+  .work {
+
+    &__title {
+      margin-bottom: rem(64px);
+    }
+
+  }
+
+{% endstylesheet %}

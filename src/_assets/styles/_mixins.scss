@@ -1,9 +1,50 @@
 @import 'variables';
 
+/*********************
+CONTAINER
+*********************/
 @mixin container {
   width: calc(100%-200px);
   margin-left: 100px;
   margin-right: 100px;
   max-width: 1500px;
+}
+
+/*********************
+BREAKPOINTS
+usage:
+.container {
+  styles for mobile
+    @include sm {
+      padding: 0 20px;
+    }   
+}
+*********************/
+// Small devices
+@mixin sm {
+  @media (min-width: #{$breakpoint--sm}) {
+      @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$breakpoint--md}) {
+      @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$breakpoint--lg}) {
+      @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$breakpoint--xl}) {
+      @content;
+  }
 }
 

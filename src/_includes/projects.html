@@ -1,0 +1,43 @@
+{%- for post in collections.post -%}
+    <div class="project">
+        <div class="project__overline">{{ post.data.company }}—{{ post.data.year }}</div>
+        <h3 class="project__title">{{ post.data.title }}</h3>
+        <p class="project__description">{{ post.data.description }}</p>
+        <div class="image">{{ post.templateContent }}</div>
+    </div>
+{%- endfor -%}
+
+{% stylesheet 'scss' %}
+// Import sass from your styles directory
+  @import 'variables';
+  @import 'mixins';
+  @import 'functions';
+
+  .project {
+
+    margin-bottom: rem(64px);
+
+    &__overline {
+      text-transform: uppercase;
+      color: $foreground-alt;
+      font-weight: 700;
+      font-size: 0.64em;
+      line-height: 1;
+      margin-bottom: rem(2px);
+      max-width: 61%;
+    }
+
+    &__title {
+      margin-bottom: rem(8px);
+      font-weight: 700;
+      max-width: 61%;
+    }
+
+    &__description {
+      max-width: 61%;
+      margin-top: 0;
+    }
+
+  }
+
+{% endstylesheet %}

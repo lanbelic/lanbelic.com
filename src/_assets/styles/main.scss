@@ -1,10 +1,21 @@
 @import 'normalize.css/normalize';
 @import 'variables';
 @import 'mixins';
+@import 'functions';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap');
 
 html {
   font-family: system-ui;
   line-height: 1.5;
+  font-size: $base-size;
+}
+
+body {
+  background-color: $background-base;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  color: $foreground-default;
 }
 
 img {
@@ -32,4 +43,36 @@ a {
   &:not([class]) {
     text-decoration: underline;
   }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 3.052em;
+}
+
+h2 {
+  font-size: 2.441em;
+}
+
+h3 {
+  font-size: 1.953em;
+}
+
+h4 {
+  font-size: 1.563em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+small, .text_small {
+  font-size: 0.8em;
 }

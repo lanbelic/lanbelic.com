@@ -1,0 +1,9 @@
+@import 'variables';
+
+// SASS FUNCTION TO CONVERT PX INTO REM
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($base-size)}rem;
+}

@@ -26,7 +26,10 @@
   @import 'functions';
 
   .header {
-    padding: rem(60px) 0;
+    padding: rem(28px) 0;
+    @include lg {
+      padding: rem(60px) 0;
+    }
 
     &__nav {
       @include container;

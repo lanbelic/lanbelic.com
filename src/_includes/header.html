@@ -26,7 +26,7 @@
   @import 'functions';
 
   .header {
-    padding: rem(72px) 0;
+    padding: rem(60px) 0;
 
     &__nav {
       @include container;
@@ -51,7 +51,11 @@
 
     &__link {
       margin: -0.5rem;
-      padding: 0.5rem;
+      padding: rem(12px) rem(16px);
+      border-radius: 8px;
+      &:hover{
+        background: $background-hover;
+      }
     }
   }
 

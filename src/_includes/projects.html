@@ -24,17 +24,26 @@
       font-size: 0.64em;
       line-height: 1;
       margin-bottom: rem(2px);
-      max-width: 61%;
+      width: 100%;
+      @include xl {
+        max-width: 61%;
+      }
     }
 
     &__title {
       margin-bottom: rem(8px);
       font-weight: 700;
-      max-width: 61%;
+      width: 100%;
+      @include xl {
+        max-width: 61%;
+      }
     }
 
     &__description {
-      max-width: 61%;
+      width: 100%;
+      @include xl {
+        max-width: 61%;
+      }
       margin-top: 0;
     }
 

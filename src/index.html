@@ -33,8 +33,9 @@
 
   .hero {
 
-    margin-bottom: rem(128px);
+    margin-bottom: rem(32px);
     @include lg {
+      margin-bottom: rem(128px);
       display: flex;
       flex-flow: row wrap;
     }
@@ -96,7 +97,10 @@
   .work {
 
     &__title {
-      margin-bottom: rem(64px);
+      margin-bottom: rem(24px);
+      @include lg {
+        margin-bottom: rem(64px);
+      }
     }
 
   }

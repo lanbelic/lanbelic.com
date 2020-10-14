@@ -6,7 +6,7 @@
 <main class="home">
   <div class="hero">
     <div class="hero__content">
-      <div class="hero__logo"></div>
+      <div class="hero__logo">{% include 'branding.html' %}</div>
       <h1 class="hero__title">Product designer and writer.
         Eccentric architecture enthusiast.
         Always a work in progress.</h1>
@@ -39,23 +39,36 @@
 
     &__content {
       flex: 5;
-      margin-right: rem(60px);
+      margin-right: rem(100px);
       display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     &__image {
       flex: 3;
+      background: $foreground-accent;
 
       picture {
-        height: auto;
+        top: 40px;
+        left: -40px;
+        transition: all cubic-bezier(0, 0, 0.29, 1.02) .1s;
+        &:hover{
+          top: 20px;
+          left: -20px;
+        }
       }
     }
 
+
+    &__logo {
+      flex: 0 1 auto;
+    }
+
     &__title {
+      flex: 0 1 auto;
       font-size: 2.441em;
       font-weight: 400;
-      margin-bottom: 2rem;
-      margin-top: 2rem;
       align-self: flex-end;
     }
 

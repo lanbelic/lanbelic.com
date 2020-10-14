@@ -9,10 +9,12 @@
 
 <header class="header">
   <nav class="header__nav">
-    <a class="header__brand" href="/">🕛 Twelvety</a>
     <ul class="header__link-list">
       <li class="header__link-list-item">
-        <a class="header__link" href="https://github.com/gregives/twelvety">GitHub</a>
+        <a class="header__link" href="#">About Me</a>
+      </li>
+      <li class="header__link-list-item">
+        <a class="header__link" href="#">Resume</a>
       </li>
     </ul>
   </nav>
@@ -21,20 +23,16 @@
 {% stylesheet 'scss' %}
   // Import sass from your styles directory
   @import 'mixins';
+  @import 'functions';
 
   .header {
-    padding: 2rem 0;
+    padding: rem(72px) 0;
 
     &__nav {
       @include container;
 
       display: flex;
       flex-direction: row;
-    }
-
-    &__brand {
-      margin: -0.5rem;
-      padding: 0.5rem;
     }
 
     &__link-list {
@@ -56,4 +54,5 @@
       padding: 0.5rem;
     }
   }
+
 {% endstylesheet %}

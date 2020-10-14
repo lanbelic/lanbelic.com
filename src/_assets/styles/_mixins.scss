@@ -1,16 +1,6 @@
 @import 'variables';
 
 /*********************
-CONTAINER
-*********************/
-@mixin container {
-  width: calc(100%-200px);
-  margin-left: 100px;
-  margin-right: 100px;
-  max-width: 1500px;
-}
-
-/*********************
 BREAKPOINTS
 usage:
 .container {
@@ -45,6 +35,21 @@ usage:
 @mixin xl {
   @media (min-width: #{$breakpoint--xl}) {
       @content;
+  }
+}
+
+/*********************
+CONTAINER
+*********************/
+@mixin container {
+  width: calc(100% - 80px);
+  margin-left: 40px;
+  margin-right: 40px;
+  max-width: 1500px;
+  @include lg {
+    width: calc(100% - 200px);
+    margin-left: 100px;
+    margin-right: 100px;
   }
 }
 

@@ -1,11 +1,18 @@
 <header class="header">
   <nav class="header__nav">
     <ul class="header__link-list">
+      <!---
       <li class="header__link-list-item">
         <a class="header__link" href="#">About Me</a>
       </li>
+    -->
       <li class="header__link-list-item">
-        <a class="header__link" href="https://github.com/lanbelic/lanbelic.com/raw/master/src/_assets/LanBelic_Resume.pdf">Resume </a>
+        <a class="header__link" href="https://github.com/lanbelic/lanbelic.com/raw/master/src/_assets/LanBelic_Resume.pdf">
+          Resume 
+          <svg width="20" height="20">
+              <path d="M10 3.125v10M6.25 9.375l3.75 3.75 3.75-3.75M19.376 13.125v1.25h0a2.5 2.5 0 01-2.5 2.5H3.126h0a2.5 2.5 0 01-2.5-2.5s0 0 0 0v-1.25" stroke-width="1.5"/>
+          </svg>
+        </a>
       </li>
     </ul>
   </nav>
@@ -16,6 +23,15 @@
   // Import sass from your styles directory
   @import 'mixins';
   @import 'functions';
+
+  svg {
+    fill:none;
+    stroke:$foreground-default;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width:1.5px;
+    margin-left: rem(8px)
+  }
 
   .header {
     padding: rem(28px) 0;

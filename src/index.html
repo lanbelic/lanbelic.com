@@ -1,16 +1,15 @@
 <main class="home">
   <div class="hero">
     <div class="hero__content">
-      <div class="hero__logo">{% include 'branding.html' %}</div>
-      <h1 class="hero__title">Product designer and writer.
-        Eccentric architecture enthusiast.
-        Always a work in progress.</h1>
+      <div class="hero__title">LAN BELIC—</div>
+      <h1 class="hero__headline">Designer, devoted to creating delightful, logical and accessible user experiences.</h1>
     </div>
     <div class="hero__image">
       {% picture 'profile-index.jpg', 'Self portrait with my dog Leni', '90vw', 'lazy' %}
     </div>
   </div>
   <div class="work">
+    <hr>
     <h2 class="work__title">Recent work</h2>
     {% include 'projects.html' %}
   </div>
@@ -30,15 +29,16 @@
 
     margin-bottom: rem(32px);
     @include lg {
-      margin-bottom: rem(128px);
+      margin-bottom: rem(120px);
       display: flex;
       flex-flow: row wrap;
     }
+    @include xl {
+      margin-bottom: rem(248px);
+    }
 
     &__content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      align-self: flex-end;
       margin-bottom: rem(24px);
       @include lg {
         margin-bottom:0;
@@ -75,6 +75,13 @@
     }
 
     &__title {
+      font-size: rem(30px);
+      line-height: rem(39px);
+      font-weight: 700;
+      color: $foreground-default;
+  }
+
+    &__headline {
       font-size: rem(32px);
       flex: 0 1 auto;
       font-weight: 400;
@@ -90,6 +97,10 @@
   }
 
   .work {
+
+    hr {
+      border: 5px solid $foreground-default;
+    }
 
     &__title {
       margin-bottom: rem(24px);

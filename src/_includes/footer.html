@@ -1,0 +1,82 @@
+<footer class="footer">
+    <hr>
+    <div class="footer__content">
+        <div class="footer__copyright">© 2020 Lan Belic</div>
+        <ul class="footer__list">
+            <li class="footer__list-item"><a class="footer__list-link" href="#" target="_blank">Twitter</a></li>
+            <li class="footer__list-item"><a class="footer__list-link" href="#" target="_blank">LinkedIn</a></li>
+            <li class="footer__list-item"><a class="footer__list-link" href="#" target="_blank">GitHub</a></li>
+            <li class="footer__list-item"><a class="footer__list-link" href="#" target="_blank">Dribbble</a></li>
+        </ul>
+    </div>
+</footer>
+  
+  {% stylesheet 'scss' %}
+    // Import sass from your styles directory
+    @import 'mixins';
+    @import 'functions';
+
+    .footer {
+        @include container;
+        font-size: 0.8em;
+        padding-bottom: rem(40px);
+
+        hr {
+            margin: 0 0 rem(24px) 0;
+            border: 5px solid $foreground-default;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            @include md {
+                flex-direction: row;
+            }
+
+        }
+
+        &__copyright {
+            flex: 1 auto;
+            margin-bottom: rem(24px);
+            @include md {
+                margin-bottom: 0;
+            }
+        }
+
+        &__list {
+            flex: 1 auto;
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            margin: 0;
+            margin-left: 0;
+            justify-content: space-between;
+            padding: 0;
+            @include md {
+                margin-left: auto;
+                padding-left: 2rem;
+                justify-content: flex-end;
+            }
+        }
+
+        &__list-item {
+            & + & {
+                @include md {
+                    margin: 0 0 0 2rem;
+                }
+            }
+        }
+
+        &__list-link {
+            margin: -0.5rem;
+            padding: rem(12px) rem(16px);
+            border-radius: 8px;
+            &:hover{
+                background: $background-hover;
+            }
+        }
+
+    }
+  
+  {% endstylesheet %}
+  

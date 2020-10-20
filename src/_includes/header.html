@@ -9,6 +9,7 @@
       </li>
     </ul>
   </nav>
+  <hr>
 </header>
 
 {% stylesheet 'scss' %}
@@ -20,6 +21,14 @@
     padding: rem(28px) 0;
     @include lg {
       padding: rem(60px) 0;
+    }
+
+    hr {
+      border: 5px solid $foreground-default;
+      margin: rem(28px) rem(20px) 0 rem(20px);
+      @include md {
+        display: none;
+      }
     }
 
     &__nav {

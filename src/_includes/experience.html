@@ -1,0 +1,47 @@
+{%- for post in collections.experience -%}
+    <div class="experience">
+      <div class="experience__company">{{ post.data.company }}</div>
+      <div class="experience__subtitle">{{ post.data.title }} // {{ post.data.time }}</div>
+      <div class="experience__description">{{ post.templateContent }}</div>
+    </div>
+{%- endfor -%}
+
+{% stylesheet 'scss' %}
+// Import sass from your styles directory
+  @import 'variables';
+  @import 'mixins';
+  @import 'functions';
+
+  .experience {
+
+    margin-bottom: rem(64px);
+
+    &__company {
+      font-weight: 700;
+    }
+
+    &__subtitle {
+      margin-bottom: rem(12px);
+      color: $foreground-alt;
+    }
+
+    &__description {
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      li{
+        list-style: none;
+        margin-bottom: rem(8px);
+
+        &:before {
+          content: "→ ";
+        }
+      }
+    }
+
+  }
+
+{% endstylesheet %}

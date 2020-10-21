@@ -1,0 +1,95 @@
+<main class="main">
+  <div class="main__image">
+    {% picture 'profile-index.jpg', 'Self portrait with my dog Leni', '90vw', 'lazy' %}
+  </div>
+  <div class="main__content">
+    <div class="main__about">
+      <p>
+        Hi there! My name is Lan Belic and I am a product designer from Slovenia, currently living and working in Amsterdam.
+      </p>
+      <p>
+        Focusing on human-centered design, I am always looking to deliver a delightful experience and to fulfill business needs. I always desire to create innovative, exciting and inspiring work. When designing, I am strategizing decisions by following structure, systematic thinking and processes, which helps me to tackle any problem.
+      </p>
+      <p>
+        A key to good design is collaboration, therefore I always strive to collaborate with engineers, managers, researches, analysts and stakeholders, to transform complex tasks into intuitive and easy to use solutions.
+      </p>
+      <div class="main__buttons">
+        <a href="#" class="main__btn">Download PDF Resume</a>
+        <a href="#" class="main__btn">View Case Studies</a>
+      </div>
+    </div>
+    <div class="main__resume">
+      <hr>
+      <h2>Work Experience</h2>
+      {% include 'experience.html' %}
+    </div>
+  </div>
+</main>
+
+{% include 'footer.html' %}
+
+{% stylesheet 'scss' %}
+  // Import sass from your styles directory
+  @import 'variables';
+  @import 'mixins';
+  @import 'functions';
+
+  .main {
+    @include container;
+    display: flex;
+    margin: rem(128px) 0;
+
+    &__about {
+      p {
+        font-size: 1.563em;
+      }
+    }
+
+    &__image {
+      flex:3;
+      margin-right: rem(60px);
+    }
+
+    &__content {
+      flex: 5;
+      margin-top: rem(256px);
+    }
+
+    &__buttons{
+      margin-top: rem(24px);
+    }
+
+    &__btn {
+      padding: rem(12px) rem(16px);
+      color: $foreground-onAccent;
+      background: $background-dark;
+      border-radius: rem(2px);
+      display: inline-block;
+      margin-right: rem(12px);
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        background: lighten($background-dark, 4%)
+      }
+    }
+
+    &__resume{
+      margin-top: rem(80px);
+
+      hr {
+        border: 5px solid $foreground-default;
+        margin: 0 0 rem(12px) 0;
+      }
+
+      h2 {
+        margin-bottom: rem(40px);
+      }
+
+    }
+
+  }
+
+{% endstylesheet %}
